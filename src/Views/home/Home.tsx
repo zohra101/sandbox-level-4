@@ -3,9 +3,9 @@ import React, { useEffect } from "react";
 import { handleClick } from "../../controllers/handleClick.js";
 import { handleSubmit } from "../../controllers/handleSubmit.js";
 import "./Home.scss";
-import midEastImage from "../../assets/images/archcopy.png";
-import { Carousel } from "../Carousel.jsx";
-import { NavbarActive } from "./NavbarActive.jsx";
+//import midEastImage from "../../../assets/images/archcopy.png";
+import { Carousel } from "./Carousel.jsx";
+import { NavbarActive } from "../navbar/NavbarActive.jsx";
 
 export function Home() {
 	useEffect(componentDidMount, []);
@@ -15,12 +15,12 @@ export function Home() {
 
 	const domain = window.location.hostname;
 	console.log(`Home domain: ${domain}`);
-	console.log(`Home arch path: ${midEastImage}`);
+	// console.log(`Home arch path: ${midEastImage}`);
 
 	return (
 		<>
 			<header id="homeHeader">
-				<NavbarActive />
+				<NavbarActive/>
 			</header>
 			<main
 				className="m-3"
@@ -33,13 +33,13 @@ export function Home() {
 						justifySelf: "center",
 					}}
 				>
-					<img
+					{/* <img
 						id="midEastImage"
 						src={midEastImage}
 						data-bs-title="A picture of an arch"
 						data-bs-toggle="tooltip"
 						width="75% !important"
-					/>
+					/> */}
 				</div>
 				<p className="highlight">The message is: {message}</p>
 				<button onClick={handleClick}>Click</button>
@@ -61,12 +61,12 @@ export function Home() {
 }
 
 function componentDidMount() {
-	document.getElementById("midEastImage");
-	console.log(`midEastImage: ${midEastImage}`);
+	// document.getElementById("midEastImage");
+	// console.log(`midEastImage: ${midEastImage}`);
 
 	document.getElementById("titleTag");
 	titleTag.innerHTML = "Home";
 
-	const midEastImageTooltip = document.getElementById("midEastImage");
-	new bootstrap.Tooltip(midEastImageTooltip);
+	// const midEastImageTooltip = document.getElementById("midEastImage");
+	// new bootstrap.Tooltip(midEastImageTooltip);
 }

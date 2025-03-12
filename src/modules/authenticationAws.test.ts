@@ -1,5 +1,5 @@
 import { describe, it, test } from "@jest/globals";
-import { authenticationAws } from "../modules/authenticationAws.js";
+import { authenticationAws } from "./authenticationAws.js";
 
 describe("The DatabaseSimulation constructor", () => {
 	it("connects when the api key is correct", correctApikey);

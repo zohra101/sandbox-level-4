@@ -1,4 +1,4 @@
-export function handleSubmit(event=new Event()) {
+export function handleSubmit(event: Event) {
 	console.log("Form submitted successfully.");
 	
 }

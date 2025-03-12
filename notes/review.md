@@ -15,7 +15,7 @@
 
 -  JavaScript XML - JavaScript syntax that looks like HTML.
 
-1. Rename component files from .js to .jsx.
+1. Rename component files from `.js` to `.jsx`.
 2. Notice the icon.
 3. Try to run the app.
 
@@ -62,7 +62,7 @@ export default {
 
 ### Install packages with PNPM
 
-1. Install PNPM globally: `npm install -- global pnpm`.
+1. Install PNPM globally: `npm install --global pnpm`.
 2. Delete the `node_modules` folder.
 3. Install with PNPM: `pnpm install`.
 4. Delete `package.lock.json`.

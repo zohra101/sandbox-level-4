@@ -1,6 +1,6 @@
 import { describe, it, expect } from "@jest/globals";
 import { authenticationSimulationDB } from "./authenticationSimulationDB.js";
-import { logins } from "../modules/logins.js";
+import { logins } from "./logins.js";
 
 describe("The authenticationSimulationDB function", () => {
 	it("authenticates when email and password are correct", async () => {

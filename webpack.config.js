@@ -4,8 +4,8 @@ export default {
 		//RULES ARE A LIST OF WAYS TO PROCESS THE MODULES
 		rules: [
 			{
-				test: /\.(js|jsx|ts|tsx)/,
-				exclude: /\.(scss|css|jpg|png|mp4|jpeg|otf|ttf|json)/, //DON'T COMPILE STYLE MODULES
+				test: /\.(js|jsx|ts|tsx)/, //COMPILE JAVASCRIPT AND TYPESCRIPT FILES
+				exclude: /\.(scss|css|jpg|png|mp4|jpeg|otf|ttf|json)/, //DON'T COMPILE STYLE MODULES, IMAGES, FONTS, OR JSON
 				use: "babel-loader", //USE THIS LOADER TO COMPILE ALL OTHER MODULES
 			},
 			{
@@ -13,8 +13,8 @@ export default {
 				use: ["style-loader", "css-loader", "sass-loader"], //USE THIS LOADER TO COMPLILE STYLE MODULES
 			},
 			{
-				test: /\.(jpg|png|jpeg|mp4)/,
-				type: "asset/resource",
+				test: /\.(jpg|png|jpeg|mp4)/, //COMPLILE THESE FILE TYPES
+				type: "asset/resource", //HANDLE ASSETS AND RESOURCES SEPARATELY FROM BABEL AND STYLES
 			},
 		],
 	},

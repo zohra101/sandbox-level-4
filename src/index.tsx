@@ -1,12 +1,12 @@
 import { createRoot } from "react-dom/client";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
-import { Home } from "./Views/home/Home.jsx";
-import { Videos } from "./Views/Videos.jsx";
-import { MyGreeting } from "./Views/home/MyGreeting.jsx";
-import { Domain } from "./Views/navbar/Domain.jsx";
+import { Home } from "./Views/home/Home.js";
+import { Videos } from "./Views/videos/Videos.js";
+import { MyGreeting } from "./Views/home/MyGreeting.js";
+import { Domain } from "./Views/navbar/Domain.js";
 import { getRootPath } from "./utils/getRootPath.js";
-import { ResponsiveDesign } from "./Views/ResponsiveDesign.jsx";
+import { ResponsiveDesign } from "./Views/ResponsiveDesign.js";
 
 // const root = createRoot(window.bodyTag);
 const bodyTag = document.getElementById("bodyTag");

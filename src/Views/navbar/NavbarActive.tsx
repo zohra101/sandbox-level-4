@@ -11,17 +11,26 @@ export function NavbarActive() {
 			<nav className="nav nav-tabs nav-fill bg-secondary">
 				<NavLink
 					className="nav-link text-info"
-					to={`${rootPath}/home`}>
+					to={`${rootPath}/home`}
+				>
 					Home
 				</NavLink>
 				<NavLink
 					className="nav-link text-info"
-					to={`${rootPath}/greeting`}>
+					to={`${rootPath}/react-feedback`}
+				>
+					React Feedback Practice
+				</NavLink>
+				<NavLink
+					className="nav-link text-info"
+					to={`${rootPath}/greeting`}
+				>
 					Greeting
 				</NavLink>
 				<NavLink
 					className="nav-link text-info"
-					to={`${rootPath}/videos`}>
+					to={`${rootPath}/videos`}
+				>
 					Videos
 				</NavLink>
 				{/* <NavLink
@@ -31,15 +40,17 @@ export function NavbarActive() {
 				</NavLink> */}
 				<NavLink
 					className="nav-link text-info"
-					to={`${rootPath}/domain`}>
+					to={`${rootPath}/domain`}
+				>
 					Domain
 				</NavLink>
 				<NavLink
 					className="nav-link text-info"
-					to={`${rootPath}/responsive`}>
+					to={`${rootPath}/responsive`}
+				>
 					Responsive
 				</NavLink>
-				<SignInArea/>
+				<SignInArea />
 			</nav>
 		</>
 	);

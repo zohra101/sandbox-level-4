@@ -1,7 +1,7 @@
 export default {
 	presets: [
-		"@babel/preset-env",
-		"@babel/preset-react",
-		"@babel/preset-typescript",
+		"@babel/preset-env", //Converts the new import-export syntax to the old syntax (for Jest)
+		"@babel/preset-react", //Converts JSX to browser-compatible JavaScript
+		"@babel/preset-typescript", //Removes extra datatypes that typescript handles and leaves only JavaScript
 	],
 };

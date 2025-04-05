@@ -8,3 +8,7 @@ export async function getQuote() {
     };
 	return result;
 }
+const FavqApiResponse = {
+	quote: response.data.quote.body,
+	author: response.data.quote.author,
+};

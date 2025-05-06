@@ -1,3 +1,4 @@
 node_modules
 .aws
 _archive
+.env

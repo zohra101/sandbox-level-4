@@ -1,0 +1,18 @@
+#homeTitle {
+  background-color: rgb(147, 147, 198);
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.center {
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-self: center;
+}
+
+.depth {
+  border-radius: 10px;
+  box-shadow: 10px 10px grey;
+}/*# sourceMappingURL=Home.css.map */

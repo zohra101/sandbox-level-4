@@ -1,4 +1,5 @@
 import { Configuration } from "webpack";
+import Zip from "zip-webpack-plugin";
 
 export default {
 	module: {
@@ -20,7 +21,8 @@ export default {
 	output: {
 		filename: "index.js", //Changes the name of the bundle file as equired for AWS Lambda
 		library: {
-			type: "commonjs", //Prevents tree shaking of unused bundle exports AKA indicatesthat the bundle is a library
+			type: "commonjs", //Prevents tree shaking of unused (unimported) bundle exports AKA indicates that the bundle is a library
 		},
 	},
+	plugins: [new Zip({ include: /^index.js$/ })],
 } as Configuration;

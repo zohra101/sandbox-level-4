@@ -1,0 +1,5 @@
+{
+	"compilerOptions": {
+		"module": "Preserve" //Allows use of mixed import/export versions
+	}
+}

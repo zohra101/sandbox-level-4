@@ -80,9 +80,10 @@ const { url } = request;
 - Contains information about the request that was sent to the server.
 - In this case, the request is coming from the browser.
 
-1. Start the server in a JavaScript debug terminal and inspect the request object.
-2. Destructure the url property from the request object.
-3. Respond with the value of url.
+1. Start the server in a JavaScript debug terminal.
+2. Inspect the request object.
+3. Destructure the url property from the request object.
+4. Respond with the value of url.
 
 ### Express App Summary
 ```javascript
@@ -90,9 +91,9 @@ const app = express();
 app.get(path, handler);
 app.listen(port, hostname);
 ```
-1. Instantiate an Express app that contains methods for starting server
-2. Specify a path and a handler for that path
-3. Start the server by listening for activity at a domain (port and hostname)
+1. Instantiate an Express `app` that contains methods for starting server.
+2. Specify a `path` and a `handler` for that path.
+3. Start the server by listening for activity at a `domain` (`port` and `hostname`).
 
 ### Nodemon
 - Stands for node monitor
@@ -102,60 +103,66 @@ app.listen(port, hostname);
 1. Install nodemon: `pnpm install nodemon --save-dev`
 2. Update start script in package.json file:`"start": nodemon ./dist/main.js`
 
-***A few notes are missing starting here****
-
 ### Listener Callback
 `app.listen(port, hostname, handleListen)`
 
-Example: 
+-When the listener is loaded, it can run a callback function.
+
+1. Add a callback to the listener.
+2. Let the callback display the URL for viewing the server response.
+3. Also display instructions to run the build script.
+
+#### Example: 
+```js
 function handleListen() {
     console.log(`Listening on http://${hostname}:${port}...`);
     console.log(`Open a new terminal and run 'npm run build' `);
     console.log(`To debug, start this server in a JavaScript Debug Terminal`);
 }
-
-
-(started on this but will finish explanation tomorrow)
+```
 
 ### Access the backend from the front-end
-`fetch("http://localhost:9000")`
-1. Create a React component
-2. From `componentDidMount`, send a fetch request
-3. Observe the TypeScript error when using `async/await` in componentDidMount
-4. Use the `promise.then` method to save the response in a `state variable` and render it
-5. Observe the `"failed to fetch"` error
+`fetch("http://localhost:8000")`
+
+1. Create a React component.
+2. From `componentDidMount`, send a fetch request.
+3. Observe the TypeScript error when using `async/await` in componentDidMount.
+4. Use the `promise.then` method to save the response in a `state variable` and render it.
+5. Observe the `"failed to fetch"` error.
 
 ### Review - CORS
-- Cross Origin Resource Sharing.
+- Cross Origin Resource Sharing
 - If the requesting domain is not in the server's CORS list, the browser blocks the response.
 
 1. Use the debugger in the backend.
 2. Observe that the server does send the response.
 3. Observe that the browser client doesn't receive the response.
 
+--TO FIX THIS--
+
 ### Enable CORS - Cross Origin Resource Sharing
 - The cors module allows Cross Origin Resource Sharing between client and server.
 
-1. Install CORS: `pnpm install cors`
-2. Add TypeScript support with `pnpm install @types/cors --save-dev`
-3. In `index.ts`, `app.use( cors() )`
-4. Observe the frontend receive the server response
-- NOTE: we enabled our server to have CORS and the server got that info and allowed it to be passed through to the web browser
+1. Install CORS: `pnpm install cors`.
+2. Add TypeScript support with `pnpm install @types/cors --save-dev`.
+3. In `index.ts`, `app.use( cors() )`.
+4. Observe the frontend receive the server response.
+- NOTE: we enabled our server to have CORS and the server got that info .and allowed it to be passed through to the web browser.
 
 ### Axios (front end and backend use)
 - Axios is a module that's more popular than the built-in fetch module
 - `https://axios-http.com/`
 
-1. Install Axios: `pnpm install axios`
-2. Use the `axios get` method instead of `fetch`
-3. Observe the usage differences
+1. Install Axios: `pnpm install axios`.
+2. Use the `axios get` method instead of `fetch`.
+3. Observe the usage differences.
 
 ### Folder structure for backend routes
 ```
 Express Template
     >src
         >routes
-        >index.ts
+        index.ts
 ```
  
 - Create a separate file for each path, also knows as routes.
@@ -172,21 +179,16 @@ const data = { origin: request.headers.origin };
 - Frontend clients usually receive data from backend servers.
 - The root path of the server can be used for the server page.
 
-1. In the Express server, add the "/api" path and a route handler called api.
-2. In the routes folder, add api.ts and a function called api.
-3. Let it respond with data only, like an object containing the origin.
+1. In the Express server, add the `/api` path and a route handler called `api`.
+2. In the `routes` folder, add `api.ts` and a function called `api`.
+3. Let it respond with `data` only, like an object containing the origin.
 
-Note: (from my understanding based on what was said--Raylon)
-Frontend Clients Code Explanation: 
-The frontend sends a request to the backend, using the api path.When the api path is called, its instructions are to use the api handler to process it. The api handler has a request and a response property to get the data object.
-
-The front end receives the response from the api handler in the backend. The promise gets the resolve value, which is the response.
-The response comes back as an actual object, which needs to be stringified to extract the data from the response. It will return a object with data inside. {origin:request}
+The frontend sends a request to the backend, using the api path. When the api path is called, its instructions are to use the api handler to process it. The api handler has a request and a response property to get the data object. The front end receives the response from the api handler in the backend. The promise gets the resolve value, which is the response. The response comes back as an actual object, which needs to be stringified to extract the data from the response. It will return a object with data inside. `{origin:request}`
 
 ### Request query
 `axios.get(http://localhost:8000/api?message=hello")`
 
-- Contains query parameters that were sent through the URL
+- Contains query parameters that were sent through the URL.
 
 1. Add query parameters to the path `/ api ?message=hello`.
 2. Use JavaScript debug terminal to inspect the request object.
@@ -198,14 +200,6 @@ The response comes back as an actual object, which needs to be stringified to ex
       - Run: `pnpm install jest @types/jest --save-dev`.
       - Add to babel.config.js: `"@babel/preset-env"`.
       - Run: `pnpm install @babel/preset-env --save-dev`.
-2. Add an NPM script for `test`.
-      - Add to package.json: `"test":"npx jest"`.
+2. Add an NPM script for `test`
+      - Add to package.json: `"test":"npx jest"`
 3. Make sure Jest is working.
-
-### Ignore the backend dist folder
-- The `dist` folder is for starting the backend server.
-- Because GitHub doesn't start the server, the repository can ignore the `dist` folder.
-
-1. Add `dist` to `.gitignore`.
-2. `git rm -r --cached dist`.
-3. Commit changes and push updates to GitHub.

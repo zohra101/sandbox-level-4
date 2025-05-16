@@ -1,4 +1,4 @@
-import { StateVariables } from "./stateVariabkles";
+import { StateVariables } from "./stateVariables";
 
 export const stateSetters = {
 	//Methods that match their state variables
@@ -24,16 +24,16 @@ export const stateSetters = {
 };
 
 type ActionString = {
-    type: string,
-    payload: string
-}
+	type: string;
+	payload: string;
+};
 
 type ActionBoolean = {
-	type: string,
-	payload: boolean
+	type: string;
+	payload: boolean;
 };
 
 type ActionNumber = {
-	type: string,
-	payload: number
+	type: string;
+	payload: number;
 };

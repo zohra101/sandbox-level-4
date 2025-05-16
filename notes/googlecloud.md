@@ -86,3 +86,11 @@ runtime: nodejs22
 3. Open the displayed link in the browser; your server root handler should respond.
 4. Save the command in an NPM script (ex. `"deploy"`).
 5. Add an NPM script to open a browser tab with the live App Engine server link.
+6. 
+### App Engine extra steps
+
+1. In the `dist` folder, run `npm install` (not PNPM) to generate `package-lock.json`
+2. OPTIONAL: Delete `node modules` in the `dist` folder because App Engine ignores it
+3. Save a backup (copy & paste) of `app.yaml` and the modified `package.json` file in a folder (ex. `. bak`)
+4. Add the backup folder to `.gitignore`
+5. To view app in the web browser run `gcloud app browse`

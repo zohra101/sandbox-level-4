@@ -1,6 +1,6 @@
 import { configureStore, ConfigureStoreOptions, CreateSliceOptions } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
-import { stateVariables } from "./stateVariabkles";
+import { stateVariables } from "./stateVariables";
 import { stateSetters } from "./stateSetters";
 
 

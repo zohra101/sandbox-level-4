@@ -1,4 +1,4 @@
-import { StateVariables } from "./stateVariabkles";
+import { StateVariables } from "./stateVariables";
 
 export function selectDidMount(state: StateVariables) {
 	const { didMount } = state;

@@ -209,3 +209,53 @@ The response comes back as an actual object, which needs to be stringified to ex
 1. Add `dist` to `.gitignore`.
 2. `git rm -r --cached dist`.
 3. Commit changes and push updates to GitHub.
+
+### HTTP method POST
+- `POST` is an HTTP method, a way to communicate with servers, like the `GET` method
+
+1. Add to the AI backend `index.ts` `app.post("/postDemo",postDemo)`.
+2. Add the route handler `post` to send and response.
+3. Try to use the browser URL bar to send a request to the `postDemo` path.
+4. There should be an error.
+
+### Review - Postman
+- Postman is an app that can be used to send requests to a server.
+- Query parameters can be sent through the `URL` manually.
+- Query parameters can be entered in the `Params` section.
+- The server response is displayed at the bottom.
+- https://www.postman.com/
+
+### POST data
+- Using the POST method to send data is more secure because the data is hidden.
+
+1. Observe that data in the `Params` tab is exposed in the `URL`.
+2. With the `POST` method, data should be sent through the `Body` tab.
+3. Send data through `x-www-form-urlencoded.`
+4. Observe the data is hidden and not accessible through request `query` object.
+
+### Request body
+- Express must be configured to receive data through the `POST` method.
+- The hidden `POST` data is received by the backend server in `request.body`.
+
+1. Use the debugger to observe that `request.body` is not in the `postDemo` handler.
+2, Add to the `index.ts` file `app.use(urlencoded())`.
+3. Use the debugger to observe that `request.body` is NOW in the `postDemo` handler.
+
+### Request body data
+- Send a response that included data from `request.body`.
+
+1. Use the debugger to observe the properties of `request.body`.
+2. Respond with information from `request.body`.
+3. Use Postman to view the response.
+
+### JSON parameters
+- Axios accepts data as an object and uses the post method to send data as a JSON string.
+- Express needs to be configured to receive JSON parameters.
+
+```js
+app.use(json());
+```
+
+1. Use the debugger to confirm that data is not being transmitted from frontend to backend.
+2. To the backend `index.ts` file, add `app.use(json())` to enable JSON parameters.
+3. Use the debugger to confirm that JSON parameters are being received.

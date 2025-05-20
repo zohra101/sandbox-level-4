@@ -15,7 +15,7 @@
 	"main": "src/index.js",
 	"scripts": {
 		"start": "npm run close-port && npm run start-server",
-		"test": "npx jest ./src/modules/activateOnClick.test.ts",
+		"test": "npx jest getAnswer",
 		"build": "npx webpack --mode=production",
 		"deploy": "npm run s3-upload && npm run update-cloudfront",
 		"--------": "-------------------",

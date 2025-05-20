@@ -1,6 +1,6 @@
 // USE DEFAULT IMPORTS (INSTEAD OF NAMED IMPORTS) FOR ASSETS
 import React, { useEffect, useState } from "react";
-import { handleClick } from "../controllers/handleClickOld";
+import { handleClick } from "../../_archive/handleClickOld";
 import { handleSubmit } from "../controllers/handleSubmit";
 // import "./Home.scss";
 import midEastImage from "../../assets/images/archcopy.png";

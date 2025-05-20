@@ -1,10 +1,9 @@
 import { Request, Response } from "express";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 //function handler() {}; //Declare the handler as an empty function
 export function root(request: Request, response: Response) {
-    const { url } = request;
-    response.send(`<h1>Express Template</h1><p>Backend root page.</p>`);
-    debugger;
-
-    // response.send({ message: "Hello world!"});
+    response.send(`<h1>Google Cloud</h1><h6>Backend root page. Mode = ${process.env.mode}</h6>`)
 }

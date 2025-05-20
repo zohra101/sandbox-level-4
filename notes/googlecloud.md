@@ -89,8 +89,15 @@ runtime: nodejs22
 6. 
 ### App Engine extra steps
 
-1. In the `dist` folder, run `npm install` (not PNPM) to generate `package-lock.json`
-2. OPTIONAL: Delete `node modules` in the `dist` folder because App Engine ignores it
-3. Save a backup (copy & paste) of `app.yaml` and the modified `package.json` file in a folder (ex. `. bak`)
-4. Add the backup folder to `.gitignore`
-5. To view app in the web browser run `gcloud app browse`
+1. In the `dist` folder, run `npm install` (not PNPM) to generate `package-lock.json`.
+2. OPTIONAL: Delete `node modules` in the `dist` folder because App Engine ignores it.
+3. Save a backup (copy & paste) of `app.yaml` and the modified `package.json` file in a folder (ex. `. bak`).
+4. Add the backup folder to `.gitignore`.
+5. To view app in the web browser run `gcloud app browse`.
+
+### App Engine environment variables
+- Use a separate `.env` file to store environment variables for App Engine.
+
+1. In the `dist` folder, define App Engine environment variables in an `.env` file.
+2. Save a backup of `.env` in a folder (ex. `.bak`).
+3. Add the `dist` folder to `.gitignore` because GitHub doesn't deploy the backend.
